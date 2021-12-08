@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize('mysql://root:@localhost:3306/ecommerce');
+const sequelize = new Sequelize('mysql://root:@localhost:3306/ecommerce2');
 
 try {
     sequelize.authenticate();
