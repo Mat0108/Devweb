@@ -1,0 +1,191 @@
+body{
+    background-color:rgb(99, 95, 90);
+}
+.nav{
+  background-color: grey;
+
+}
+.navtext{
+  color:white;
+}
+.CName{
+  width: 100px;
+  height: 40px;
+  border: black;
+  border-radius: 1em;
+}
+.CPrix{
+  width: 100px;
+  height: 40px;
+  border: black;
+  border-radius: 1em;
+}
+
+.Rfoam{
+  margin: 0 auto;
+  width: 800px;
+  height: 400px;
+  padding: 1em;
+  border: 1px solid #CCC;
+  font-size: 10px;
+  background-color: rgb(141, 137, 137);
+  border-radius: 1em;
+  text-align: center;
+  margin: auto;
+}
+.Rinput{
+  background-color: rgb(175, 175, 175);
+  color : white;
+  font-size: 16px;
+  margin:auto;
+  width: 100%;
+  
+}
+
+.Rlabel{
+  background-color: rgb(141, 137, 137);
+  color : white;
+  font-size: 16px;
+  margin:auto;
+  width:100px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  padding: 10px;
+  offset-anchor: right 3em ;
+}
+.Rbutton{
+  margin: 0 auto;
+  color : white;
+  font-size: 16px;
+  width: 150px;
+  background-color: rgb(56, 56, 56);
+}
+.Rlink{
+  margin: 0 auto;
+  color : white;
+  font-size: 16px;
+  width: 150px;
+}
+
+
+.Cfoam{
+  margin: 0 auto;
+  width: 800px;
+  height: 300px;
+  padding: 1em;
+  border: 1px solid #CCC;
+  font-size: 10px;
+  background-color: rgb(141, 137, 137);
+  border-radius: 1em;
+  text-align: center;
+  margin: auto;
+}
+.Cinput{
+  background-color: rgb(175, 175, 175);
+  color : white;
+  font-size: 16px;
+  margin: auto;
+  width: 100%;
+  
+}
+.Clabel{
+  background-color: rgb(141, 137, 137);
+  color : white;
+  font-size: 16px;
+  margin:auto;
+  width:100px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  padding: 10px;
+  offset-anchor: right 3em ;
+}
+.Cbutton{
+  margin: 0 auto;
+  color : white;
+  font-size: 16px;
+  width: 150px;
+  background-color: rgb(56, 56, 56);
+}
+.Clink{
+  margin: 0 auto;
+  color : white;
+  font-size: 16px;
+  width: 250px;
+}
+
+.Pcard{
+  margin: 0 200px 0 200px;
+  background-color: rgb(139, 135, 129);
+}
+.Pimage{
+  mix-blend-mode: multiply;
+  align-items: center;
+}
+.Ptext{
+  color : white;
+}
+.Pprice{
+  color : white;
+  border: 1px solid #CCC;
+  width: 100px;
+  margin: auto;
+}
+
+.Pinput{
+  color : white;
+  background-color : rgb(139, 135, 129);
+  width: 100px;
+  margin: auto;
+  
+}
+.Pinput:focus { 
+  color : white;
+  background-color : rgb(139, 135, 129);
+}
+.Pbutton{
+  color : white;
+  width: 100px;
+  margin: auto;
+}
+
+.Pbutton:hover{
+  
+  background-color : rgb(139, 135, 129);
+  color : white;
+  width: 100px;
+  margin: auto;
+}
+
+.Psgroup{
+  width : 100%;
+  margin: 0 0 0 0;
+}
+
+.Pscard{
+  background-color: rgb(139, 135, 129);
+  width : 100/3%;
+  height: 200px;
+}
+.Pstitre{
+  color : white;
+  text-align: center;
+}
+.Pslabel{
+  width: 100%;
+  color : white;
+  text-align: center;
+}
+.Psimage{
+  mix-blend-mode: multiply;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Psprice{
+  color : white;
+  border: 1px solid rgba(204, 204, 204, 0.39);
+  width: 100%;
+  text-align: center;
+
+}
