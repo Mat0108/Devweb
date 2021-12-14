@@ -1,5 +1,5 @@
 body{
-    background-color:rgb(99, 95, 90);
+    background-color:rgba(94, 115, 160, 0.932);
 }
 .nav{
   background-color: grey;
@@ -115,7 +115,7 @@ body{
 
 .Pcard{
   margin: 0 200px 0 200px;
-  background-color: rgb(139, 135, 129);
+  background-color: rgb(123, 149, 204);
 }
 .Pimage{
   mix-blend-mode: multiply;
@@ -127,14 +127,14 @@ body{
 .Pprice{
   color : white;
   border: 1px solid #CCC;
-  width: 100px;
+  width: 105px;
   margin: auto;
 }
 
 .Pinput{
   color : white;
   background-color : rgb(139, 135, 129);
-  width: 100px;
+  width: 105px;
   margin: auto;
   
 }
@@ -144,7 +144,7 @@ body{
 }
 .Pbutton{
   color : white;
-  width: 100px;
+  width: 105px;
   margin: auto;
 }
 
@@ -152,8 +152,7 @@ body{
   
   background-color : rgb(139, 135, 129);
   color : white;
-  width: 100px;
-  margin: auto;
+
 }
 
 .Psgroup{
@@ -162,7 +161,7 @@ body{
 }
 
 .Pscard{
-  background-color: rgb(139, 135, 129);
+  background-color: rgb(123, 149, 204);
   width : 100/3%;
   height: 200px;
 }
@@ -177,7 +176,6 @@ body{
 }
 .Psimage{
   mix-blend-mode: multiply;
-
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -188,4 +186,44 @@ body{
   width: 100%;
   text-align: center;
 
+}
+.Cdropdownmenu{
+  background-color : rgb(33, 37, 41);
+
+}
+.Cdropdown{
+  background-color : rgb(33, 37, 41);
+  color : white;
+}
+.Cdropdown:hover{
+  background-color : rgb(33, 37, 41);
+  color : white;
+}
+.Ch1{
+  color:white;
+  text-align: center;
+}
+
+
+.Clink{
+  color: white;
+  text-decoration: none;
+}
+.Clink:hover{
+  color:gray;
+}
+.Cimage{
+  
+  mix-blend-mode:multiply;
+  background-blend-mode:hard-light;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Cborder{
+  border: 2px solid rgb(241, 241, 241);
+}
+.Ctable{
+  
+  background-color : rgb(33, 37, 41);
 }

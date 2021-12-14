@@ -13,6 +13,7 @@ import Register  from './pages/Register';
 
 import Product from './pages/Product';
 import Products from './pages/Products';
+import Cartpages from './pages/Cartpages';
 import './index.css';
 /*
 function App(){
@@ -39,6 +40,7 @@ const App =() => {
                 <Route path="/category/:categoriename" element={<Category/>}></Route>
                 <Route path="/products/" element={<Products />}></Route>
                 <Route path="/product/:productId" element={<Product/>}></Route>
+                <Route path="/cart" element={<Cartpages/>}></Route>
             </Routes>
         </Router>
         </Cart.Provider>

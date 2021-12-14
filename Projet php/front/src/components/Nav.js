@@ -8,14 +8,29 @@ const Nav = () =>{
     const [categories,setCategories] = useState([]);
     const getProductCategory = async () => {
         const res = await axios.get('http://localhost:5000/api/products-category/');
-        console.log(res);
         setCategories(res.data);
     };
     useEffect(()=>{
         getProductCategory()
+        setTotal(0);
     }, []);
     
+    
     const {cart,setCart} = React.useContext(Cart);
+    const [total,setTotal] = useState();
+    useEffect(()=>{
+      var total2 = 0;
+        cart.map(element => {
+          total2= parseInt(total2)+parseInt(element.qty);
+        });
+        console.log(total2);
+        if (parseInt(total2) !== 0){
+          setTotal(total2)
+        }
+
+      
+    }, [cart]);
+    
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -51,12 +66,13 @@ const Nav = () =>{
             </ul>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    {cart.length}
+                    {total}
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <ul class="dropdown-menu Cdropdownmenu" aria-labelledby="dropdownMenuButton1">
                     {cart.map((item)=><li>
-                        <a class="dropdown-item" >{item.qty}  {item.product.name}</a>
+                      <Link class="dropdown-item Cdropdown" to = {`/product/${item.product.id}`}>{item.qty}  {item.product.name} </Link>
                     </li>)}
+                    <l1> <Link class="dropdown-item Cdropdown" to="/cart" >Commander !</Link></l1>
                 </ul>
             </div>
             <form class="d-flex">
