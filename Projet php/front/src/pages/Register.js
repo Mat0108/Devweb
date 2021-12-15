@@ -35,8 +35,8 @@ const Register = () => {
     }
     return (
         <form onSubmit={onClick}>
-            <div class="row Rfoam">
-                <h2>Creer votre compte</h2>
+            <div class="row Rfoam cardcolor">
+                <h2 className="CH1">Creer votre compte</h2>
                 <div class="col-2">
                     <label class="Rlabel" for="firstname">Prenom</label>
                 </div>

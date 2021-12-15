@@ -17,19 +17,26 @@ const Nav = () =>{
     
     
     const {cart,setCart} = React.useContext(Cart);
+    const [totalHT, setTotalHT] = useState(0);
     const [total,setTotal] = useState();
     useEffect(()=>{
-      var total2 = 0;
+      let total2 = 0;
+      let totalHT_tmp = totalHT
         cart.map(element => {
           total2= parseInt(total2)+parseInt(element.qty);
+          totalHT_tmp = totalHT_tmp + (element.qty * parseInt(element.product.price))
         });
         console.log(total2);
+        
         if (parseInt(total2) !== 0){
           setTotal(total2)
+          setTotalHT(totalHT_tmp)
         }
 
       
     }, [cart]);
+    
+
     
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -41,19 +48,21 @@ const Nav = () =>{
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-              <Link class="nav-link" to="/">Home </Link>
+              <Link class="nav-link textcolor" to="/">Home </Link>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/Login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <li class="nav-item dropdown Cdropdown">
+                <a class="nav-link dropdown-toggle textcolor" href="/Login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Connection
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <l1><Link class="dropdown-item" to="/Login">Login </Link></l1>
-                    <l1><Link class="dropdown-item" to="/Register">Register </Link></l1>
+                <ul class="dropdown-menu Cdropdownmenu" aria-labelledby="navbarDropdown">
+                    <l1><Link class="dropdown-item Cdropdown" to="/Login">Login </Link></l1>
+                    <l1><Link class="dropdown-item Cdropdown" to="/Register">Register </Link></l1>
                 </ul>
               </li>
+
+
               <li class="nav-item">
-               <Link class="nav-link" to="/products">Produits </Link>
+               <Link class="nav-link textcolor" to="/products">Produits </Link>
               </li>
               {
                 categories.map((category)=>  <li class="nav-item"><Link class="nav-link" key ={`cat-${category.id}`} to = {`/category/${category.id}`}>
@@ -72,7 +81,8 @@ const Nav = () =>{
                     {cart.map((item)=><li>
                       <Link class="dropdown-item Cdropdown" to = {`/product/${item.product.id}`}>{item.qty}  {item.product.name} </Link>
                     </li>)}
-                    <l1> <Link class="dropdown-item Cdropdown" to="/cart" >Commander !</Link></l1>
+                    
+                    <l1> <Link class="dropdown-item Cdropdown" to="/cart" >Commander ! {totalHT}</Link></l1>
                 </ul>
             </div>
             <form class="d-flex">

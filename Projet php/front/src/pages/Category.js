@@ -32,7 +32,7 @@ const Categorie = () => {
         <h1 className="Pstitre">Liste des produits de la categorie {categories}</h1>
         <div className="row align-items-start Psgroup">
             {products.map((product) =>
-                <div className="card col-4 Pscard ">
+                <div className="card col-4 Pscard cardcolor rounded-4">
                     <div className="card-body  ">
                         <h5 className="card-title Pslabel">
                             <Link className="Pslabel" to={`/product/${product.id}`}>{product.name}</Link>

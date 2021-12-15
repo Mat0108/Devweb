@@ -25,8 +25,7 @@ $product = $bdd->fetchall($sql);
                 <tr class="product-table">
                     <th class="product-nom barre">Nom</th>
                     <th class="product-prix barre">Prix</th>
-                    <th class="product-text barre">Description</th>
-                    <th class="product-prix barre">Category</th>
+                    <th class="product-text barre">Description</th>>
                     <th class="product-photo barre">Photo</th>
                     <th class="admin-action barre"></th>
 
@@ -45,7 +44,6 @@ $product = $bdd->fetchall($sql);
             <tr>
                 <td class="product-nom"><?php echo $row['name'];?></td>
                 <td class="product-prix"><?php echo $row['price'];?></td>
-                <td class="product-text"><?php echo $row['description'];?></td>
                 <td class="product-prix"><?php echo $category['name'];?></td>
                 <td class="product-photo"><img src="data:image/x-icon;base64,<?= $image ?>"?> </td>
                 <td class="admin-action"><a href="product_edit.php?id=<?php echo $row['id'];?>">Edit</a> </td>

@@ -89,7 +89,7 @@ const Product = () => {
     }
     return (<>
         {!isLoaded && <> Chargement..</>}
-        { isLoaded && <div class="card h-100 Pcard">
+        { isLoaded && <div class="card h-100 Pcard cardcolor">
             
             <div class="card-body ">
                 <h5 class="card-title Ptext">{product.name}</h5>
@@ -103,7 +103,6 @@ const Product = () => {
                     <form class="row mb-3 col-1" onSubmit={onSubmitHandler}>
                         <div class="col-sm-10">
                              <label className="card-text Pprice">{product.price} € </label>
-                
                         </div>
                         <div class="col-sm-10" >
                             <input class="form-control Pinput" onChange={onChangeHandler} value= {qty}type="number" placeholder="0"  ></input>
@@ -111,11 +110,8 @@ const Product = () => {
                         <div className="col-sm-10">
                             <button class="btn btn-outline-light Pbutton " type="submit" onClick={() => changeText("Mise à jour")} >{buttonText}</button>
                         </div>
-
                     </form>
-
                 </div>
-               
              </div>
     </div>
         }

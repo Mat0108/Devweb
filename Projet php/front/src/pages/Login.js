@@ -1,15 +1,16 @@
 import React,{useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {login} from "../services/auth";
+
 const Login = () => {
     let navigate = useNavigate();
+    //const {userlog,setUserlog} = React.useContext(User);
     // var alertPlaceholder = document.getElementById('liveAlertPlaceholder');
     const [messages,setMessages] = useState([]);
-
     const [user,setUser] = useState({
         'email':'',
         'password':''
-    })
+    });
     /*function alert(message, type) {
         var wrapper = document.createElement('div')
         wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
@@ -24,6 +25,7 @@ const Login = () => {
             try{
                 await login(user);
                 setMessages([...messages,{type:"alert alert-success",msg:"vous êtes connecté !"}]);
+                
                 //navigate("/category/2"); 
             }catch (error){
                 if (error.response){
@@ -47,8 +49,8 @@ const Login = () => {
                 {message.msg}
             </div> )}
             <form onSubmit={onClick}>
-                <div class="row Cfoam">
-                    <h2>Connection</h2>
+                <div class="row Cfoam cardcolor">
+                    <h2 className="CH1">Connection</h2>
                     <div class="col-2">
                         <label class="Clabel" for="email">Email</label></div>
                     <div class="col-10">

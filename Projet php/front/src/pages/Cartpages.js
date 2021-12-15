@@ -4,13 +4,13 @@ import {Link} from 'react-router-dom'
 import { Cart } from '../context/Cart'
 
 const Cartpages = () => {
-    const {cart, setCart} = useContext(Cart)
+    const {cart, setCart} = useContext(Cart);
     const [totalHT, setTotalHT] = useState(0)
     const [totalTVA, setTotalTVA] = useState(0)
     const [totalTTC, setTotalTTC] = useState(0)
 
     useEffect(() => {
-        let totalHT_tmp = totalHT
+        let totalHT_tmp = 0
         cart.forEach(item => {
             totalHT_tmp = totalHT_tmp + (item.qty * parseInt(item.product.price))
         })
@@ -43,7 +43,7 @@ const Cartpages = () => {
                                     <td><Link className="Clink" to= {`/product/${item.product.id}`}>{item.product.name}</Link></td>
                                     <td className="text-end">{item.qty}</td>
                                     <td className="text-end">{item.product.price}</td>
-                                    <td className="text-end" >{parseInt(item.qty) * parseInt(item.product.price)} €</td>
+                                    <td className="text-end" >{parseInt(item.qty) * parseFloat(item.product.price)} €</td>
                                 </tr>)}
                             </tbody>
                         </table>
