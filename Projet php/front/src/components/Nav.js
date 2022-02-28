@@ -22,21 +22,21 @@ const Nav = () =>{
     useEffect(()=>{
       let total2 = 0;
       let totalHT_tmp = totalHT
+      
         cart.map(element => {
           total2= parseInt(total2)+parseInt(element.qty);
-          totalHT_tmp = totalHT_tmp + (element.qty * parseInt(element.product.price))
+          totalHT_tmp = totalHT_tmp + (element.qty * parseInt(element.product.price));        
         });
-        console.log(total2);
         
         if (parseInt(total2) !== 0){
           setTotal(total2)
           setTotalHT(totalHT_tmp)
         }
 
-      
-    }, [cart]);
-    
+      if (cart){
 
+      }
+    }, [cart]);
     
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -75,14 +75,14 @@ const Nav = () =>{
             </ul>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    {total}
+                    {cart.lenght}
                 </button>
                 <ul class="dropdown-menu Cdropdownmenu" aria-labelledby="dropdownMenuButton1">
                     {cart.map((item)=><li>
                       <Link class="dropdown-item Cdropdown" to = {`/product/${item.product.id}`}>{item.qty}  {item.product.name} </Link>
                     </li>)}
                     
-                    <l1> <Link class="dropdown-item Cdropdown" to="/cart" >Commander ! {totalHT}</Link></l1>
+                    <l1> <Link class="dropdown-item Cdropdown" to="/cart" >Commander ! </Link></l1>
                 </ul>
             </div>
             <form class="d-flex">

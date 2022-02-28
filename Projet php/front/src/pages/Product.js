@@ -25,6 +25,7 @@ const Product = () => {
             setProduct(product);
             setIsLoaded(true);
             
+            
         };
         fetchData();
     },[productId]);
@@ -67,25 +68,47 @@ const Product = () => {
     const onSubmitHandler = (event) =>{
         event.preventDefault();
         let find = false;
-        const newCart = cart.map((item) => {
-            if (item.product && parseInt(item.product.id) === parseInt(productId)) {
-
-                const updatedItem = {
-                    ...item,
-                    qty:parseInt(qty),
-                };
-                find = true
-                return updatedItem;
-            }
-            return item;
-        });
-
-        if (find) {
+        if (parseInt(qty) === 0)
+        { 
+            let newCart = cart.filter(index => parseInt(index.product.id) !== parseInt(productId))
             setCart(newCart);
-            changeText("Mise à jour");
-        } else {
-            setCart([...cart, { qty, product }])
         }
+        else{
+            const newCart = cart.map((item) => {
+                if (item.product && parseInt(item.product.id) === parseInt(productId)) {
+                    const updatedItem = {
+                        ...item,
+                        qty: parseInt(qty),
+                    };
+                    return updatedItem;
+                    find = true;
+                }
+                if (parseInt(qty) !== 0 || parseInt(item.product.id) !== parseInt(productId)){
+                    return item;
+                }
+            });
+    
+    
+            if (find) {
+                setCart(newCart);
+                changeText("Mise à jour");
+            } else {
+                setCart([...cart, { qty, product }])
+            }
+            console.log("test");
+            console.log(cart);
+        }
+        
+        /*
+        if (qty === 0){
+            console.log("del2");
+            delete cart[0];
+            cart.splice(0,1);
+            console.log(cart);
+            setCart(cart);
+            changeText("Ajouter");
+        }
+        */
     }
     return (<>
         {!isLoaded && <> Chargement..</>}
@@ -113,7 +136,7 @@ const Product = () => {
                     </form>
                 </div>
              </div>
-    </div>
+        </div>
         }
         </>
     )

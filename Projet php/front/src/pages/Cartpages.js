@@ -76,7 +76,7 @@ const Cartpages = () => {
                 </div>
                 <div>
                     <div className="text-end">
-                        <Link class="btn btn-success" to='/'>Paiement</Link>
+                        <Link class="btn btn-success" to='/pay'>Paiement</Link>
                     </div>
                 </div>
             </>}

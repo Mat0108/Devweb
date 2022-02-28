@@ -14,7 +14,15 @@ import Register  from './pages/Register';
 import Product from './pages/Product';
 import Products from './pages/Products';
 import Cartpages from './pages/Cartpages';
+import CartPay from './pages/CartPay';
 import './index.css';
+import {
+    RecoilRoot,
+    atom,
+    selector,
+    useRecoilState,
+    useRecoilValue,
+  } from 'recoil';
 /*
 function App(){
     return <h1>Hello World</h1>
@@ -28,23 +36,26 @@ const App =() => {
     const [cart,setCart]= useState([]);
 
     return <>
-        <Cart.Provider value={{cart,setCart}}>
-        <Router>
-            <div>
-                <Nav /> 
-            </div>
-            <Routes>
-                <Route path="/" element={<Home/>}></Route>
-                <Route path="/Login" element ={<Login />}></Route>
-                <Route path="/Register" element={<Register />}></Route>
-                <Route path="/category/:categoriename" element={<Category/>}></Route>
-                <Route path="/products/" element={<Products />}></Route>
-                <Route path="/product/:productId" element={<Product/>}></Route>
-                <Route path="/cart" element={<Cartpages/>}></Route>
-            </Routes>
-        </Router>
-        </Cart.Provider>
-
+        <RecoilRoot>
+            <Cart.Provider value={{cart,setCart}}>
+            <Router>
+                <div>
+                    <Nav /> 
+                </div>
+                <Routes>
+                    <Route path="/" element={<Home/>}></Route>
+                    <Route path="/Login" element ={<Login />}></Route>
+                    <Route path="/Register" element={<Register />}></Route>
+                    <Route path="/category/:categoriename" element={<Category/>}></Route>
+                    <Route path="/products/" element={<Products />}></Route>
+                    <Route path="/product/:productId" element={<Product/>}></Route>
+                    <Route path="/cart" element={<Cartpages/>}></Route>
+                    <Route path="/pay" element={<CartPay />}></Route>
+                </Routes>
+            </Router>
+            </Cart.Provider>
+        </RecoilRoot>
+        
     </>
 }
 ReactDOM.render(
