@@ -57,10 +57,7 @@ const Product = () => {
         
     },[product]);
 
-
     
-
-
     const onChangeHandler = (event) =>{
         setQty(event.target.value);
     }

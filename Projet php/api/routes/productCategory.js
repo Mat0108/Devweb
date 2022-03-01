@@ -18,7 +18,8 @@ router.get('/name/:categoryId', async (req,res) => {
     let {categoryId} = req.params;
     let product2 = await productCategory.findOne({ where: { id: categoryId } });
     res.status(200).json(product2.name);
-
 });
+
+
 
 module.exports = router;

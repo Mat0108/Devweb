@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { Cart } from '../context/Cart';
 
-
 const Nav = () =>{
     const [categories,setCategories] = useState([]);
     const getProductCategory = async () => {
@@ -15,10 +14,17 @@ const Nav = () =>{
         setTotal(0);
     }, []);
     
-    
+    const [search, setSearch] = useState("");
+
+
+    const onChangeSearch = (event) =>{
+      setSearch(event.target.value);
+        
+    }
     const {cart,setCart} = React.useContext(Cart);
     const [totalHT, setTotalHT] = useState(0);
     const [total,setTotal] = useState();
+
     useEffect(()=>{
       let total2 = 0;
       let totalHT_tmp = totalHT
@@ -37,7 +43,7 @@ const Nav = () =>{
 
       }
     }, [cart]);
-    
+
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -86,8 +92,8 @@ const Nav = () =>{
                 </ul>
             </div>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-                <button class="btn btn-outline-light " type="submit">Search</button>
+                <input class="form-control me-2" onChange={onChangeSearch} type="search" placeholder="Search" aria-label="Search"></input>
+                <Link className="btn btn-outline-light" to= {`/search/${search}`}>Search</Link>        
             </form>
 
           </div>

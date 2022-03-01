@@ -16,7 +16,7 @@ const Categorie = () => {
 
     },[categoriename]);
     
-
+    
     const [categories,setCategories] = useState([]);
     useEffect(()=>{
         const getProductCategory = async () => {
@@ -26,6 +26,7 @@ const Categorie = () => {
         getProductCategory()
     }, [categoriename]);
     
+
     return (
         <div className="container">
             

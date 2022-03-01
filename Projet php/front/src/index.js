@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM, { createPortal } from 'react-dom';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {Route,Routes} from 'react-router';
 
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 
 import Category from "./pages/Category";
 import Home from './pages/Home';
@@ -15,31 +15,21 @@ import Product from './pages/Product';
 import Products from './pages/Products';
 import Cartpages from './pages/Cartpages';
 import CartPay from './pages/CartPay';
+import Search from './pages/Search';
 import './index.css';
-import {
-    RecoilRoot,
-    atom,
-    selector,
-    useRecoilState,
-    useRecoilValue,
-    useSetRecoilState,
-  } from 'recoil';
+import { RecoilRoot } from 'recoil';
 /*
 function App(){
     return <h1>Hello World</h1>
 }*/
-
-
-import { MyContext } from './context/MyContext';
 import { Cart } from './context/Cart';
 
 
 const App =() => {
-    const [test,setTest]= useState({test:'bye'});
     const [cart,setCart]= useState([]);
 
     return <>
-        <RecoilRoot>
+        <RecoilRoot>{}
 
             <Cart.Provider value={{cart,setCart}}>
             <Router>
@@ -55,6 +45,7 @@ const App =() => {
                     <Route path="/product/:productId" element={<Product/>}></Route>
                     <Route path="/cart" element={<Cartpages/>}></Route>
                     <Route path="/pay" element={<CartPay />}></Route>
+                    <Route path="/search/:texte" element={<Search />}></Route> 
                 </Routes>
             </Router>
             </Cart.Provider>

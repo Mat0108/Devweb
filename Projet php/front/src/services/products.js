@@ -16,3 +16,7 @@ export const getProducts = async (categoryId) => {
     const res = await axios.get(`http://localhost:5000/api/products/`);
     return res.data;
 }
+export const SearchProduct = async(texte) => {
+    const res = await axios.get(`http://localhost:5000/api/products/search/${texte}`);
+    return res.data;
+}
