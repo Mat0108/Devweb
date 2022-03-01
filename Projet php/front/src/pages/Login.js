@@ -1,12 +1,15 @@
 import React,{useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {login} from "../services/auth";
+import {useRecoilState} from 'recoil';
+import { UserState } from '../atom/Userinfo';
 
 const Login = () => {
     let navigate = useNavigate();
     //const {userlog,setUserlog} = React.useContext(User);
     // var alertPlaceholder = document.getElementById('liveAlertPlaceholder');
     const [messages,setMessages] = useState([]);
+    const [userset, setUserset] = useRecoilState(UserState);
     const [user,setUser] = useState({
         'email':'',
         'password':''
@@ -25,8 +28,9 @@ const Login = () => {
             try{
                 await login(user);
                 setMessages([...messages,{type:"alert alert-success",msg:"vous êtes connecté !"}]);
+                setUserset(user.email);
                 
-                //navigate("/category/2"); 
+                navigate("/category/2"); 
             }catch (error){
                 if (error.response){
                     setMessages([...messages,{type:"alert alert-danger",msg:error.response.data}]);

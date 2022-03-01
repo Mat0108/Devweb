@@ -75,7 +75,7 @@ const Nav = () =>{
             </ul>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    {cart.lenght}
+                 <img src="https://img.icons8.com/material-rounded/26/FFFFFF/buy.png"/>
                 </button>
                 <ul class="dropdown-menu Cdropdownmenu" aria-labelledby="dropdownMenuButton1">
                     {cart.map((item)=><li>

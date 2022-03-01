@@ -1,14 +1,17 @@
 import React, {useEffect, useState, useContext} from 'react'
-import {Link} from 'react-router-dom'
-
+import { Link, useNavigate } from "react-router-dom";
 import { Cart } from '../context/Cart'
 
-const Cartpages = () => {
-    const {cart, setCart} = useContext(Cart);
-    const [totalHT, setTotalHT] = useState(0)
-    const [totalTVA, setTotalTVA] = useState(0)
-    const [totalTTC, setTotalTTC] = useState(0)
+import {useRecoilState} from 'recoil';
+import { UserState } from '../atom/Userinfo';
 
+const Cartpages = () => {
+    let navigate = useNavigate();
+    const {cart, setCart} = useContext(Cart);
+    const [totalHT, setTotalHT] = useState(0);
+    const [totalTVA, setTotalTVA] = useState(0);
+    const [totalTTC, setTotalTTC] = useState(0);
+    const [user, setUser] = useRecoilState(UserState);
     useEffect(() => {
         let totalHT_tmp = 0
         cart.forEach(item => {
@@ -22,7 +25,17 @@ const Cartpages = () => {
         setTotalTVA(totalTVA_tmp)
         setTotalTTC(totalTTC_tmp+totalTVA)
     }, [])
-
+    function UserStatus(){
+    
+        if (user === "")
+        {
+            navigate("/login"); 
+        }
+        else{
+            navigate("/pay")
+        }
+    }
+   
     return (
         <div className="container">
             <h1 className="Ch1">Page du panier</h1>
@@ -76,7 +89,7 @@ const Cartpages = () => {
                 </div>
                 <div>
                     <div className="text-end">
-                        <Link class="btn btn-success" to='/pay'>Paiement</Link>
+                        <button class="btn btn-success" onClick={UserStatus} > Paiement </button>
                     </div>
                 </div>
             </>}

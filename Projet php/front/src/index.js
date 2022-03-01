@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, { createPortal } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {Route,Routes} from 'react-router';
 
@@ -22,14 +22,17 @@ import {
     selector,
     useRecoilState,
     useRecoilValue,
+    useSetRecoilState,
   } from 'recoil';
 /*
 function App(){
     return <h1>Hello World</h1>
 }*/
 
+
 import { MyContext } from './context/MyContext';
 import { Cart } from './context/Cart';
+
 
 const App =() => {
     const [test,setTest]= useState({test:'bye'});
@@ -37,6 +40,7 @@ const App =() => {
 
     return <>
         <RecoilRoot>
+
             <Cart.Provider value={{cart,setCart}}>
             <Router>
                 <div>
